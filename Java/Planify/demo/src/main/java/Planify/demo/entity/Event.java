@@ -31,10 +31,12 @@ public class Event {
 	private int zipCode;
 	private String city;
 
-	// Nombre de participants (utilisation de Integer pour permettre des valeurs
-	// nulles)
-	private Integer numberOfParticipants;
-	
+	// Nombre de participants minimum (utilisation de Integer pour permettre des
+	// valeurs nulles)
+	private Integer numberOfParticipantsMin;
+	// Nombre de participants maximum (utilisation de Integer pour permettre des
+	// valeurs nulles)
+	private Integer numberOfParticipantsMax;
 	// Relation avec le créateur de cet événement
 	@ManyToOne
 	@JoinColumn(name = "creator_id") // Référence à l'utilisateur créateur

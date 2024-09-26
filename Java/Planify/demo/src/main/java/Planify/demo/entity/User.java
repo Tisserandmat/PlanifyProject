@@ -4,10 +4,12 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Data
+@Data // Génère automatiquement les getters, setters, toString, equals et hashCode
+@NoArgsConstructor // Génère un constructeur sans argument
 @Entity
 public class User {
 
@@ -17,7 +19,7 @@ public class User {
 
     private String lastname; // Nom de famille
     private String firstname; // Prénom
-
+    private String pseudo;
     @Email(message = "Adresse e-mail invalide")
     private String email;
 
