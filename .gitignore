@@ -1,0 +1,5 @@
+# Exclure tous les fichiers .properties
+*.properties
+.DS_Store
+# Exclure les dossiers de build de Java et Angular
+/Java/Planify/demo/target/
