@@ -11,27 +11,26 @@ import org.springframework.web.bind.annotation.RestController;
 import Planify.demo.dto.UserDto;
 import Planify.demo.entity.User;
 import Planify.demo.repository.UserRepository;
+import Planify.demo.service.UserService;
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api-Planify/user")
 public class UserController {
-	
+
+
 	@Autowired
-	UserRepository userRepo;
+	UserService userService;
+	
 	
 	@PostMapping("/new")
-    public ResponseEntity<?> createUser(@Valid @RequestBody UserDto userDto) {
-       //VERIFICATION et sécurité l'ors de de la création de compte a faire:
-		
-	
-
-        try {
-            return new ResponseEntity<>(userDto, HttpStatus.CREATED);
-        } catch (Exception e) {
-
-            return new ResponseEntity<>( null , HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
+	public ResponseEntity<?> createUser(@Valid @RequestBody UserDto userDto) {
+		try {
+			userService.createUser(userDto);
+			return new ResponseEntity<>(userDto, HttpStatus.CREATED);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
 
 }

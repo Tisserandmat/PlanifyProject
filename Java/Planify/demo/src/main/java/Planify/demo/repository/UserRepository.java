@@ -11,6 +11,5 @@ import org.springframework.data.jpa.repository.Query;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-	@Query("SELECT u FROM USER u")
-	List<User> getAllWorkshops();
+	
 }

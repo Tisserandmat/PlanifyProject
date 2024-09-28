@@ -21,6 +21,10 @@ public class UserDto {
 	@Size(min = 4, max = 25)
 	@NotNull
 	private String pseudo;
+	@NotNull
+	@Size(min = 6, max = 30)
+    private String password;
+
 
 	@NotNull
 	@Email

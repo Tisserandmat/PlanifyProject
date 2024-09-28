@@ -20,6 +20,8 @@ public class User {
     private String lastname; // Nom de famille
     private String firstname; // Prénom
     private String pseudo;
+    private String password;
+
     @Email(message = "Adresse e-mail invalide")
     private String email;
 
